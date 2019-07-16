@@ -7,16 +7,13 @@
         <h1><a href="/">Blog da Bia</a></h1>
     </div>
 
-    <div>
-      <p>Publicado: 10.07.2019, 16:28</a>
-        <h2><a href="">Como abrir o ambiente vitual</a></h2>
-        <p>Digite $djangogirls myvenv\Scripts\activate</p>
-    </div>
+{% for post in posts %}
+  <div>
+    <p>published: {{ post.published_date}}</p>
+    <h2><a href="">{{post.title}}</a></h2>
+    <a>{{ post.text|linebreaksbr}}</p>
+  </div>
+{% endfor %}
 
-    <div>
-      <p> Publicado: 10.07.2019, 16:36</a>
-        <h2><a href="">Como rodar p servidor</a></h2>
-        <p>Digite $djangogirls manage.py runserver - o ambiente virtual deve estar ativo</p>
-    </div>
   </body>
 </html>
